@@ -19,8 +19,8 @@
   --radius-control: 8px;
   --shadow-panel: 0 18px 44px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.035);
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
-  --font: "Segoe UI Variable", "Segoe UI", system-ui, sans-serif;
-  --font-mono: "Cascadia Mono", Consolas, ui-monospace, monospace;
+  --font: 'Segoe UI Variable', 'Segoe UI', system-ui, sans-serif;
+  --font-mono: 'Cascadia Mono', Consolas, ui-monospace, monospace;
 }
 
 *,
@@ -68,11 +68,7 @@ a {
   inset: 0;
   pointer-events: none;
   z-index: 0;
-  background-image: radial-gradient(
-    ellipse 70% 45% at 50% -8%,
-    rgba(255, 255, 255, 0.018),
-    transparent 58%
-  );
+  background-image: radial-gradient(ellipse 70% 45% at 50% -8%, rgba(255, 255, 255, 0.018), transparent 58%);
 }
 
 .page {

@@ -24,12 +24,12 @@ npm run dev
 
 ## Scripts
 
-| Command | What it does |
-| --- | --- |
-| `npm run dev` | Dev app with hot reload |
-| `npm run check` | Typecheck + lint + tests |
-| `npm run build` | Build Electron bundles + renderer |
-| `npm run dist` | Build Windows installers into `release/` |
+| Command         | What it does                             |
+| --------------- | ---------------------------------------- |
+| `npm run dev`   | Dev app with hot reload                  |
+| `npm run check` | Typecheck + lint + tests                 |
+| `npm run build` | Build Electron bundles + renderer        |
+| `npm run dist`  | Build Windows installers into `release/` |
 
 ## License
 

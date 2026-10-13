@@ -16,9 +16,7 @@ import { fileURLToPath } from 'node:url';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT_DIR = path.resolve(__dirname, '..');
 const OUT_DIR = path.join(ROOT_DIR, 'resources', 'icons');
-const SOURCE_PATH = path.resolve(
-  process.argv[2] || path.join(ROOT_DIR, 'resources', 'icon-source', 'icon-source.png')
-);
+const SOURCE_PATH = path.resolve(process.argv[2] || path.join(ROOT_DIR, 'resources', 'icon-source', 'icon-source.png'));
 const SIZES = [16, 32, 48, 128, 256];
 
 if (!fs.existsSync(SOURCE_PATH)) {

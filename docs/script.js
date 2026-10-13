@@ -13,8 +13,7 @@
   const MESSAGES = {
     pt: {
       lang: 'pt-BR',
-      description:
-        'Yami — interface desktop para gallery-dl e yt-dlp: fila, biblioteca e notificações.',
+      description: 'Yami — interface desktop para gallery-dl e yt-dlp: fila, biblioteca e notificações.',
       ogDescription: 'Interface desktop para gallery-dl e yt-dlp.',
       ledeHtml:
         'Interface para <span class="lede__em">gallery-dl</span> e <span class="lede__em">yt-dlp</span> — fila, biblioteca e notificações nativas.',
@@ -56,8 +55,7 @@
     },
     es: {
       lang: 'es',
-      description:
-        'Yami — interfaz de escritorio para gallery-dl y yt-dlp: cola, biblioteca y notificaciones.',
+      description: 'Yami — interfaz de escritorio para gallery-dl y yt-dlp: cola, biblioteca y notificaciones.',
       ogDescription: 'Interfaz de escritorio para gallery-dl y yt-dlp.',
       ledeHtml:
         'Interfaz para <span class="lede__em">gallery-dl</span> y <span class="lede__em">yt-dlp</span> — cola, biblioteca y notificaciones nativas.',
