@@ -219,6 +219,8 @@ export default defineConfig(
     'release-audit/**',
     'node_modules/**',
     'coverage/**',
+    // Static GitHub Pages site (browser globals; not part of the Electron bundles).
+    'docs/**',
     // Legacy app kept for reference until the rewrite ships.
     'electron/**',
     'native-host/**'
