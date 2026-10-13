@@ -1,0 +1,121 @@
+# Builds the Windows installers and publishes them to GitHub Releases on every push to `main`.
+#
+# Versioning (scripts/next-release-version.mjs):
+#   - If package.json is already ahead of the latest GitHub Release, that version is used.
+#   - Otherwise the patch is bumped past the latest release (continuous delivery for electron-updater).
+#
+# electron-builder uploads NSIS + portable artifacts and `latest.yml`, which electron-updater reads.
+# Do not also push a git tag from this job: creating a tag would re-trigger a second publish.
+#
+# Signing is OPTIONAL by default (unsigned installers — SmartScreen will warn). When you have a
+# certificate, set the secrets below and the repository variable YAMI_REQUIRE_SIGNING=1.
+#   GITHUB_TOKEN                     provided by Actions; used as GH_TOKEN to create the release
+#                                    and upload assets (also to read the latest release for versioning).
+#   PFX certificate (signtool):
+#     WIN_CSC_LINK                   base64 of the .pfx (or an https URL to it)
+#     WIN_CSC_KEY_PASSWORD           password of the .pfx
+#   Azure Trusted Signing (preferred over the PFX when configured):
+#     AZURE_TENANT_ID, AZURE_CLIENT_ID, AZURE_CLIENT_SECRET
+#     AZURE_CODE_SIGNING_ENDPOINT    e.g. https://eus.codesigning.azure.net/
+#     AZURE_CODE_SIGNING_ACCOUNT     Trusted Signing account name
+#     AZURE_CODE_SIGNING_PROFILE     certificate profile name
+#     AZURE_CODE_SIGNING_PUBLISHER   publisher name exactly as in the certificate (CN)
+# Variables:
+#   YAMI_REQUIRE_SIGNING = 1         fail the release unless a signing cert is configured
+#
+# See electron-builder.config.cjs and scripts/next-release-version.mjs.
+name: Release
+
+on:
+  push:
+    branches: [main]
+
+permissions: {}
+
+concurrency:
+  group: release-main
+  cancel-in-progress: false
+
+jobs:
+  windows:
+    name: build & publish (windows)
+    runs-on: windows-latest
+    timeout-minutes: 60
+    permissions:
+      contents: write # Create/update the GitHub Release and upload the installers.
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 22.x
+          cache: npm
+
+      - name: Resolve release version
+        id: version
+        shell: bash
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          version="$(node scripts/next-release-version.mjs)"
+          echo "version=${version}" >> "$GITHUB_OUTPUT"
+          echo "Resolved release version: ${version}"
+          test "$(node -p "require('./package.json').version")" = "${version}"
+
+      - run: npm ci
+
+      - name: Refuse tracked secrets / personal files
+        shell: bash
+        run: node scripts/check-no-secrets.mjs
+
+      - name: Typecheck, lint and test
+        run: npm run check
+
+      - name: Verify pinned runtime manifest
+        run: npm run runtime:verify
+
+      # Never publish (and feed auto-update with) a build that does not even start.
+      - name: Package unpacked and smoke test
+        run: |
+          npm run pack
+          npm run smoke
+
+      # Pre-create the GitHub Release (and tag). electron-builder publishes nsis + portable in
+      # parallel; if both try to create the release they race and one fails with already_exists,
+      # leaving incomplete assets. With the release already there, both only upload.
+      - name: Ensure GitHub Release exists
+        shell: bash
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          version="${{ steps.version.outputs.version }}"
+          tag="v${version}"
+          if gh release view "$tag" --repo "$GITHUB_REPOSITORY" >/dev/null 2>&1; then
+            echo "Release ${tag} already exists"
+          else
+            gh release create "$tag" \
+              --repo "$GITHUB_REPOSITORY" \
+              --title "$version" \
+              --notes "Automated build from \`${GITHUB_SHA}\`." \
+              --target "$GITHUB_SHA"
+            echo "Created release ${tag} → ${GITHUB_SHA}"
+          fi
+
+      - name: Build, sign and publish
+        run: npm run release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          CSC_LINK: ${{ secrets.WIN_CSC_LINK }}
+          CSC_KEY_PASSWORD: ${{ secrets.WIN_CSC_KEY_PASSWORD }}
+          AZURE_TENANT_ID: ${{ secrets.AZURE_TENANT_ID }}
+          AZURE_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
+          AZURE_CLIENT_SECRET: ${{ secrets.AZURE_CLIENT_SECRET }}
+          AZURE_CODE_SIGNING_ENDPOINT: ${{ secrets.AZURE_CODE_SIGNING_ENDPOINT }}
+          AZURE_CODE_SIGNING_ACCOUNT: ${{ secrets.AZURE_CODE_SIGNING_ACCOUNT }}
+          AZURE_CODE_SIGNING_PROFILE: ${{ secrets.AZURE_CODE_SIGNING_PROFILE }}
+          AZURE_CODE_SIGNING_PUBLISHER: ${{ secrets.AZURE_CODE_SIGNING_PUBLISHER }}
+          # Unsigned by default. Set repository variable YAMI_REQUIRE_SIGNING=1 once a cert is configured.
+          YAMI_REQUIRE_SIGNING: ${{ vars.YAMI_REQUIRE_SIGNING == '1' && '1' || '0' }}

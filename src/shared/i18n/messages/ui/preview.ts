@@ -1,0 +1,106 @@
+/** `ui.*` — media preview and video player. Owner: renderer. */
+import { defineMessages } from '../../define.ts';
+
+export const uiPreviewMessages = defineMessages(
+  {
+    'preview.dialogLabel': 'Preview de {name}',
+    'preview.loading': 'Preparando preview…',
+    'preview.unavailable': 'Preview indisponível',
+    'preview.openExternally': 'Abrir no app do sistema',
+    'preview.noInline': 'Sem preview para esse tipo de arquivo.',
+    'preview.imageUnsupported': 'Não foi possível exibir esta imagem. Ela pode usar um formato sem suporte.',
+    'preview.videoUnsupported':
+      'O arquivo chegou, mas este vídeo não pode ser reproduzido aqui. O codec provavelmente não tem suporte.',
+    'preview.videoLoadFailed': 'Falha ao carregar o vídeo no preview.',
+    'preview.audioUnsupported':
+      'O arquivo chegou, mas este áudio não pode ser reproduzido aqui. O codec provavelmente não tem suporte.',
+    'preview.previous': 'Anterior',
+    'preview.next': 'Próximo',
+    'preview.position': '{index}/{total}',
+    'preview.closeHint': 'Fechar (Esc)',
+    'preview.zoomHint': 'Role para zoom; duplo clique alterna o zoom; arraste para mover quando ampliado',
+    'preview.play': 'Reproduzir',
+    'preview.pause': 'Pausar',
+    'preview.mute': 'Silenciar',
+    'preview.unmute': 'Ativar som',
+    'preview.fullscreen': 'Tela cheia',
+    'preview.exitFullscreen': 'Sair da tela cheia',
+    'preview.seek': 'Posição do vídeo',
+    'preview.player': 'Player de vídeo',
+    'preview.skipBack': 'Voltar 10 segundos',
+    'preview.skipForward': 'Avançar 10 segundos',
+    'preview.volume': 'Volume',
+    'preview.speed': 'Velocidade',
+    'preview.pip': 'Picture-in-picture',
+    'preview.skipHintBack': '−10s',
+    'preview.skipHintForward': '+10s'
+  },
+  {
+    en: {
+      'preview.dialogLabel': 'Preview of {name}',
+      'preview.loading': 'Preparing preview…',
+      'preview.unavailable': 'Preview unavailable',
+      'preview.openExternally': 'Open in the system app',
+      'preview.noInline': 'No preview for this file type.',
+      'preview.imageUnsupported': 'This image could not be displayed. It may use an unsupported format.',
+      'preview.videoUnsupported':
+        'The file arrived, but this video cannot play here. Its codec is probably not supported.',
+      'preview.videoLoadFailed': 'Failed to load the video in the preview.',
+      'preview.audioUnsupported':
+        'The file arrived, but this audio cannot play here. Its codec is probably not supported.',
+      'preview.previous': 'Previous',
+      'preview.next': 'Next',
+      'preview.position': '{index}/{total}',
+      'preview.closeHint': 'Close (Esc)',
+      'preview.zoomHint': 'Scroll to zoom; double-click toggles zoom; drag to pan when zoomed in',
+      'preview.play': 'Play',
+      'preview.pause': 'Pause',
+      'preview.mute': 'Mute',
+      'preview.unmute': 'Unmute',
+      'preview.fullscreen': 'Full screen',
+      'preview.exitFullscreen': 'Exit full screen',
+      'preview.seek': 'Video position',
+      'preview.player': 'Video player',
+      'preview.skipBack': 'Back 10 seconds',
+      'preview.skipForward': 'Forward 10 seconds',
+      'preview.volume': 'Volume',
+      'preview.speed': 'Playback speed',
+      'preview.pip': 'Picture-in-picture',
+      'preview.skipHintBack': '−10s',
+      'preview.skipHintForward': '+10s'
+    },
+    es: {
+      'preview.dialogLabel': 'Vista previa de {name}',
+      'preview.loading': 'Preparando vista previa…',
+      'preview.unavailable': 'Vista previa no disponible',
+      'preview.openExternally': 'Abrir en la app del sistema',
+      'preview.noInline': 'No hay vista previa para este tipo de archivo.',
+      'preview.imageUnsupported': 'No se pudo mostrar esta imagen. Puede usar un formato no compatible.',
+      'preview.videoUnsupported':
+        'El archivo llegó, pero este vídeo no se puede reproducir aquí. Probablemente su códec no es compatible.',
+      'preview.videoLoadFailed': 'Error al cargar el vídeo en la vista previa.',
+      'preview.audioUnsupported':
+        'El archivo llegó, pero este audio no se puede reproducir aquí. Probablemente su códec no es compatible.',
+      'preview.previous': 'Anterior',
+      'preview.next': 'Siguiente',
+      'preview.position': '{index}/{total}',
+      'preview.closeHint': 'Cerrar (Esc)',
+      'preview.zoomHint': 'Desplaza para hacer zoom; doble clic alterna el zoom; arrastra para mover con zoom',
+      'preview.play': 'Reproducir',
+      'preview.pause': 'Pausar',
+      'preview.mute': 'Silenciar',
+      'preview.unmute': 'Activar sonido',
+      'preview.fullscreen': 'Pantalla completa',
+      'preview.exitFullscreen': 'Salir de pantalla completa',
+      'preview.seek': 'Posición del vídeo',
+      'preview.player': 'Reproductor de vídeo',
+      'preview.skipBack': 'Retroceder 10 segundos',
+      'preview.skipForward': 'Avanzar 10 segundos',
+      'preview.volume': 'Volumen',
+      'preview.speed': 'Velocidad',
+      'preview.pip': 'Picture-in-picture',
+      'preview.skipHintBack': '−10s',
+      'preview.skipHintForward': '+10s'
+    }
+  }
+);

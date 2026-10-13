@@ -1,0 +1,1032 @@
+{
+  "schemaVersion": 1,
+  "tools": {
+    "gallery-dl": {
+      "assets": {
+        "win32-x64": {
+          "version": "2026.10.05",
+          "url": "https://github.com/gdl-org/builds/releases/download/2026.10.05/gallery-dl_windows.exe",
+          "sha256": "a581635fc172f62e099e27ef742de985f363ebb06ea6fdaadd1db2594dd93e05",
+          "archive": "none",
+          "size": 23399411
+        },
+        "win32-arm64": {
+          "version": "2026.10.05",
+          "url": "https://github.com/gdl-org/builds/releases/download/2026.10.05/gallery-dl_windows.exe",
+          "sha256": "a581635fc172f62e099e27ef742de985f363ebb06ea6fdaadd1db2594dd93e05",
+          "archive": "none",
+          "size": 23399411
+        },
+        "win32-ia32": {
+          "version": "2026.10.05",
+          "url": "https://github.com/gdl-org/builds/releases/download/2026.10.05/gallery-dl_windows_x86.exe",
+          "sha256": "d98585db33ea72a3a51dc725a24adcea77098cbffb346d4c4743ff937c0572c7",
+          "archive": "none",
+          "size": 14286764
+        },
+        "darwin-x64": {
+          "version": "2026.10.05",
+          "url": "https://github.com/gdl-org/builds/releases/download/2026.10.05/gallery-dl_macos",
+          "sha256": "22a023e4aeb0d4528a70ffdf3b50a295b82f9d91722fa077434f55e10bee523e",
+          "archive": "none",
+          "size": 22512720
+        },
+        "darwin-arm64": {
+          "version": "2026.10.05",
+          "url": "https://github.com/gdl-org/builds/releases/download/2026.10.05/gallery-dl_macos",
+          "sha256": "22a023e4aeb0d4528a70ffdf3b50a295b82f9d91722fa077434f55e10bee523e",
+          "archive": "none",
+          "size": 22512720
+        },
+        "linux-x64": {
+          "version": "2026.10.05",
+          "url": "https://github.com/gdl-org/builds/releases/download/2026.10.05/gallery-dl_linux",
+          "sha256": "5f90b9dae544b6c5016c7224a1c88ef367b8402c290710bce6924993805b362e",
+          "archive": "none",
+          "size": 46736336
+        }
+      }
+    },
+    "yt-dlp": {
+      "latest": {
+        "repo": "yt-dlp/yt-dlp",
+        "checksumsAsset": "SHA2-256SUMS"
+      },
+      "assets": {
+        "win32-x64": {
+          "version": "2026.08.19",
+          "url": "https://github.com/yt-dlp/yt-dlp/releases/download/2026.08.19/yt-dlp.exe",
+          "sha256": "66674953fe251b89f4d08c5f0e35e0728679bd67ab3d7d05c0562af101dd3e7a",
+          "archive": "none",
+          "size": 17840399
+        },
+        "win32-arm64": {
+          "version": "2026.08.19",
+          "url": "https://github.com/yt-dlp/yt-dlp/releases/download/2026.08.19/yt-dlp_arm64.exe",
+          "sha256": "05b438997bafc3affdfda9d041353c9d73e04dc842207254b655b0887c4445b0",
+          "archive": "none",
+          "size": 21159286
+        },
+        "win32-ia32": {
+          "version": "2026.08.19",
+          "url": "https://github.com/yt-dlp/yt-dlp/releases/download/2026.08.19/yt-dlp_x86.exe",
+          "sha256": "a8f91bd41452506bc81ebd2f369b186fea0ee7075413ba00cef9fd346a0a5d0c",
+          "archive": "none",
+          "size": 13199160
+        },
+        "darwin-x64": {
+          "version": "2026.08.19",
+          "url": "https://github.com/yt-dlp/yt-dlp/releases/download/2026.08.19/yt-dlp_macos",
+          "sha256": "0f192b7ec147ab6288885d6351d9ab67367640029b4377576ef46dd79cf7b202",
+          "archive": "none",
+          "size": 37146048
+        },
+        "darwin-arm64": {
+          "version": "2026.08.19",
+          "url": "https://github.com/yt-dlp/yt-dlp/releases/download/2026.08.19/yt-dlp_macos",
+          "sha256": "0f192b7ec147ab6288885d6351d9ab67367640029b4377576ef46dd79cf7b202",
+          "archive": "none",
+          "size": 37146048
+        },
+        "linux-x64": {
+          "version": "2026.08.19",
+          "url": "https://github.com/yt-dlp/yt-dlp/releases/download/2026.08.19/yt-dlp_linux",
+          "sha256": "58162f9bfdc27458ea47bfcb311cf47028f17d8154a8bf7d689861d46399230a",
+          "archive": "none",
+          "size": 40446224
+        },
+        "linux-arm64": {
+          "version": "2026.08.19",
+          "url": "https://github.com/yt-dlp/yt-dlp/releases/download/2026.08.19/yt-dlp_linux_aarch64",
+          "sha256": "b16e4dab368a816cd05d477d698a605a6ae87ccee1c8ffd38fa21d7254141fcc",
+          "archive": "none",
+          "size": 40167448
+        }
+      }
+    },
+    "deno": {
+      "assets": {
+        "win32-x64": {
+          "version": "2.9.7",
+          "url": "https://github.com/denoland/deno/releases/download/v2.9.7/deno-x86_64-pc-windows-msvc.zip",
+          "sha256": "a0c3101b4158d1dfb7d6a78a7bf0f3de80c96bb423c152beec8beb22786f2238",
+          "archive": "zip",
+          "entry": "deno.exe",
+          "size": 42630221
+        },
+        "win32-arm64": {
+          "version": "2.9.7",
+          "url": "https://github.com/denoland/deno/releases/download/v2.9.7/deno-aarch64-pc-windows-msvc.zip",
+          "sha256": "c4c4ac8bfdaa37814bda5c05fc9cdf2154904e2ef8277673a30bdceaaa649807",
+          "archive": "zip",
+          "entry": "deno.exe",
+          "size": 40847024
+        },
+        "darwin-x64": {
+          "version": "2.9.7",
+          "url": "https://github.com/denoland/deno/releases/download/v2.9.7/deno-x86_64-apple-darwin.zip",
+          "sha256": "95daaff11c116a52ad54785e7914c8e9c9cdcaba793c5ed929c74ca2d8e6259a",
+          "archive": "zip",
+          "entry": "deno",
+          "size": 42295422
+        },
+        "darwin-arm64": {
+          "version": "2.9.7",
+          "url": "https://github.com/denoland/deno/releases/download/v2.9.7/deno-aarch64-apple-darwin.zip",
+          "sha256": "5cd46d6268f6f78f5d88bdc7159d20bd44cdaa4b3303474839f87ec6fe7ae25c",
+          "archive": "zip",
+          "entry": "deno",
+          "size": 38469316
+        },
+        "linux-x64": {
+          "version": "2.9.7",
+          "url": "https://github.com/denoland/deno/releases/download/v2.9.7/deno-x86_64-unknown-linux-gnu.zip",
+          "sha256": "c6527f24f4b16031d3ae4fa9f658d5f11534c8d84ce7dc8502420280919c3490",
+          "archive": "zip",
+          "entry": "deno",
+          "size": 41596794
+        },
+        "linux-arm64": {
+          "version": "2.9.7",
+          "url": "https://github.com/denoland/deno/releases/download/v2.9.7/deno-aarch64-unknown-linux-gnu.zip",
+          "sha256": "c832298b1ad4422481334855f6003e0f54145762c5a134f20a489511d2f65bbf",
+          "archive": "zip",
+          "entry": "deno",
+          "size": 39821318
+        }
+      }
+    },
+    "ffmpeg": {
+      "assets": {
+        "win32-x64": {
+          "version": "9.0.2",
+          "url": "https://github.com/GyanD/codexffmpeg/releases/download/9.0.2/ffmpeg-9.0.2-essentials_build.zip",
+          "sha256": "60f467265b1e312373dbcd92200c2618a74850f98d3d078e94296bb3fa2047ba",
+          "archive": "zip",
+          "entry": "ffmpeg-9.0.2-essentials_build/bin/ffmpeg.exe",
+          "companions": {
+            "ffprobe": "ffmpeg-9.0.2-essentials_build/bin/ffprobe.exe"
+          },
+          "size": 114768076
+        },
+        "win32-arm64": {
+          "version": "9.0.2",
+          "url": "https://github.com/GyanD/codexffmpeg/releases/download/9.0.2/ffmpeg-9.0.2-essentials_build.zip",
+          "sha256": "60f467265b1e312373dbcd92200c2618a74850f98d3d078e94296bb3fa2047ba",
+          "archive": "zip",
+          "entry": "ffmpeg-9.0.2-essentials_build/bin/ffmpeg.exe",
+          "companions": {
+            "ffprobe": "ffmpeg-9.0.2-essentials_build/bin/ffprobe.exe"
+          },
+          "size": 114768076
+        },
+        "darwin-x64": {
+          "version": "6.1.1",
+          "url": "https://github.com/eugeneware/ffmpeg-static/releases/download/b6.1.1/ffmpeg-darwin-x64",
+          "sha256": "ebdddc936f61e14049a2d4b549a412b8a40deeff6540e58a9f2a2da9e6b18894",
+          "archive": "none",
+          "size": 78862176
+        },
+        "darwin-arm64": {
+          "version": "6.1.1",
+          "url": "https://github.com/eugeneware/ffmpeg-static/releases/download/b6.1.1/ffmpeg-darwin-arm64",
+          "sha256": "a90e3db6a3fd35f6074b013f948b1aa45b31c6375489d39e572bea3f18336584",
+          "archive": "none",
+          "size": 45568216
+        },
+        "linux-x64": {
+          "version": "6.1.1",
+          "url": "https://github.com/eugeneware/ffmpeg-static/releases/download/b6.1.1/ffmpeg-linux-x64",
+          "sha256": "e7e7fb30477f717e6f55f9180a70386c62677ef8a4d4d1a5d948f4098aa3eb99",
+          "archive": "none",
+          "size": 79826272
+        },
+        "linux-arm64": {
+          "version": "6.1.1",
+          "url": "https://github.com/eugeneware/ffmpeg-static/releases/download/b6.1.1/ffmpeg-linux-arm64",
+          "sha256": "6bb182d0d75d23028db82e9e4f723ca69b853d055698486e6984ddb2c06fb8ce",
+          "archive": "none",
+          "size": 51134160
+        }
+      }
+    },
+    "python": {
+      "assets": {
+        "win32-x64": {
+          "version": "3.12.15",
+          "url": "https://github.com/astral-sh/python-build-standalone/releases/download/20261003/cpython-3.12.15%2B20261003-x86_64-pc-windows-msvc-install_only_stripped.tar.gz",
+          "sha256": "6fba7f2ae506facf41d457ea8293c7497910a675c69a4e954875169410a50402",
+          "archive": "tar.gz",
+          "entry": "python/python.exe",
+          "size": 22011023
+        },
+        "win32-arm64": {
+          "version": "3.12.15",
+          "url": "https://github.com/astral-sh/python-build-standalone/releases/download/20261003/cpython-3.12.15%2B20261003-aarch64-pc-windows-msvc-install_only_stripped.tar.gz",
+          "sha256": "b39c6c3aac8a88ae42fd4f2ca5a832d1e78b55506f33f0498de4dd6fc38b5162",
+          "archive": "tar.gz",
+          "entry": "python/python.exe",
+          "size": 21048802
+        },
+        "win32-ia32": {
+          "version": "3.12.15",
+          "url": "https://github.com/astral-sh/python-build-standalone/releases/download/20261003/cpython-3.12.15%2B20261003-i686-pc-windows-msvc-install_only_stripped.tar.gz",
+          "sha256": "87505de64d7547aa91ef9a0855c09c8f2e078a35b65264b2549854e71ef3333e",
+          "archive": "tar.gz",
+          "entry": "python/python.exe",
+          "size": 20687207
+        },
+        "darwin-x64": {
+          "version": "3.12.15",
+          "url": "https://github.com/astral-sh/python-build-standalone/releases/download/20261003/cpython-3.12.15%2B20261003-x86_64-apple-darwin-install_only_stripped.tar.gz",
+          "sha256": "562c30864ece2cb1d3e0ad66a1acd498611a47e5a10ce81b99158bef1ccbd355",
+          "archive": "tar.gz",
+          "entry": "python/bin/python3",
+          "size": 24733148
+        },
+        "darwin-arm64": {
+          "version": "3.12.15",
+          "url": "https://github.com/astral-sh/python-build-standalone/releases/download/20261003/cpython-3.12.15%2B20261003-aarch64-apple-darwin-install_only_stripped.tar.gz",
+          "sha256": "ad8d0c637c0a36b967b310e2c07254f4d2ca8cabaa7699e55ed6290aceb481a2",
+          "archive": "tar.gz",
+          "entry": "python/bin/python3",
+          "size": 25013243
+        },
+        "linux-x64": {
+          "version": "3.12.15",
+          "url": "https://github.com/astral-sh/python-build-standalone/releases/download/20261003/cpython-3.12.15%2B20261003-x86_64-unknown-linux-gnu-install_only_stripped.tar.gz",
+          "sha256": "731af898886c5f821890dc901eca3c651cca8e51fa7308c159d12a1194aeac91",
+          "archive": "tar.gz",
+          "entry": "python/bin/python3",
+          "size": 34285590
+        },
+        "linux-arm64": {
+          "version": "3.12.15",
+          "url": "https://github.com/astral-sh/python-build-standalone/releases/download/20261003/cpython-3.12.15%2B20261003-aarch64-unknown-linux-gnu-install_only_stripped.tar.gz",
+          "sha256": "6541297dd1798dec8b98c3ad7492808a5b9d1c126801ceb2011e7754cd20d1ce",
+          "archive": "tar.gz",
+          "entry": "python/bin/python3",
+          "size": 29215308
+        }
+      }
+    }
+  },
+  "pythonPackages": {
+    "gallery-dl": {
+      "requirement": "gallery-dl",
+      "version": "1.32.15",
+      "lock": {
+        "win32-x64": [
+          {
+            "name": "certifi",
+            "version": "2026.7.22",
+            "sha256": [
+              "62f22742b58a1a33014a2b6b706588a8d7e2a88ae7bd1a6ebe8c992928483775"
+            ]
+          },
+          {
+            "name": "charset-normalizer",
+            "version": "3.5.2",
+            "sha256": [
+              "780fbe7cab297b81dad9fb8dc5eb003c0468ffb0d9e5f65068c53a34661a96bc"
+            ]
+          },
+          {
+            "name": "gallery-dl",
+            "version": "1.32.15",
+            "sha256": [
+              "e8fc03eebddcd4ba816ae7a9c42548a68e7ae8a01e7c5a83d6f591e253f092a6"
+            ]
+          },
+          {
+            "name": "idna",
+            "version": "3.20",
+            "sha256": [
+              "ab7ae7122974553370f0bdb919e1a960b2cd1bc1ef0276416d896db81c14582c"
+            ]
+          },
+          {
+            "name": "requests",
+            "version": "2.34.2",
+            "sha256": [
+              "2a0d60c172f83ac6ab31e4554906c0f3b3588d37b5cb939b1c061f4907e278e0"
+            ]
+          },
+          {
+            "name": "urllib3",
+            "version": "2.8.0",
+            "sha256": [
+              "0cf3cae568d36aa9576b28dfb35f11328f1cb974ca7647d9475ebb86c75ac6e3"
+            ]
+          }
+        ],
+        "win32-arm64": {
+          "unsupported": "pip failed: ERROR: No matching distribution found for brotli; (implementation_name == \"cpython\" and sys_platform != \"ios\") and extra == \"default\""
+        },
+        "win32-ia32": [
+          {
+            "name": "certifi",
+            "version": "2026.7.22",
+            "sha256": [
+              "62f22742b58a1a33014a2b6b706588a8d7e2a88ae7bd1a6ebe8c992928483775"
+            ]
+          },
+          {
+            "name": "charset-normalizer",
+            "version": "3.5.2",
+            "sha256": [
+              "db19d07e2e0129e974a0e65d0064fc222a446cd5122c2fd4184d2af9fc734a9e"
+            ]
+          },
+          {
+            "name": "gallery-dl",
+            "version": "1.32.15",
+            "sha256": [
+              "e8fc03eebddcd4ba816ae7a9c42548a68e7ae8a01e7c5a83d6f591e253f092a6"
+            ]
+          },
+          {
+            "name": "idna",
+            "version": "3.20",
+            "sha256": [
+              "ab7ae7122974553370f0bdb919e1a960b2cd1bc1ef0276416d896db81c14582c"
+            ]
+          },
+          {
+            "name": "requests",
+            "version": "2.34.2",
+            "sha256": [
+              "2a0d60c172f83ac6ab31e4554906c0f3b3588d37b5cb939b1c061f4907e278e0"
+            ]
+          },
+          {
+            "name": "urllib3",
+            "version": "2.8.0",
+            "sha256": [
+              "0cf3cae568d36aa9576b28dfb35f11328f1cb974ca7647d9475ebb86c75ac6e3"
+            ]
+          }
+        ],
+        "darwin-x64": [
+          {
+            "name": "certifi",
+            "version": "2026.7.22",
+            "sha256": [
+              "62f22742b58a1a33014a2b6b706588a8d7e2a88ae7bd1a6ebe8c992928483775"
+            ]
+          },
+          {
+            "name": "charset-normalizer",
+            "version": "3.5.2",
+            "sha256": [
+              "ed2a239c0ea213acc1908150a3037257083c7c083128f1a4cec2ec4b97dca491"
+            ]
+          },
+          {
+            "name": "gallery-dl",
+            "version": "1.32.15",
+            "sha256": [
+              "e8fc03eebddcd4ba816ae7a9c42548a68e7ae8a01e7c5a83d6f591e253f092a6"
+            ]
+          },
+          {
+            "name": "idna",
+            "version": "3.20",
+            "sha256": [
+              "ab7ae7122974553370f0bdb919e1a960b2cd1bc1ef0276416d896db81c14582c"
+            ]
+          },
+          {
+            "name": "requests",
+            "version": "2.34.2",
+            "sha256": [
+              "2a0d60c172f83ac6ab31e4554906c0f3b3588d37b5cb939b1c061f4907e278e0"
+            ]
+          },
+          {
+            "name": "urllib3",
+            "version": "2.8.0",
+            "sha256": [
+              "0cf3cae568d36aa9576b28dfb35f11328f1cb974ca7647d9475ebb86c75ac6e3"
+            ]
+          }
+        ],
+        "darwin-arm64": [
+          {
+            "name": "certifi",
+            "version": "2026.7.22",
+            "sha256": [
+              "62f22742b58a1a33014a2b6b706588a8d7e2a88ae7bd1a6ebe8c992928483775"
+            ]
+          },
+          {
+            "name": "charset-normalizer",
+            "version": "3.5.2",
+            "sha256": [
+              "ed2a239c0ea213acc1908150a3037257083c7c083128f1a4cec2ec4b97dca491"
+            ]
+          },
+          {
+            "name": "gallery-dl",
+            "version": "1.32.15",
+            "sha256": [
+              "e8fc03eebddcd4ba816ae7a9c42548a68e7ae8a01e7c5a83d6f591e253f092a6"
+            ]
+          },
+          {
+            "name": "idna",
+            "version": "3.20",
+            "sha256": [
+              "ab7ae7122974553370f0bdb919e1a960b2cd1bc1ef0276416d896db81c14582c"
+            ]
+          },
+          {
+            "name": "requests",
+            "version": "2.34.2",
+            "sha256": [
+              "2a0d60c172f83ac6ab31e4554906c0f3b3588d37b5cb939b1c061f4907e278e0"
+            ]
+          },
+          {
+            "name": "urllib3",
+            "version": "2.8.0",
+            "sha256": [
+              "0cf3cae568d36aa9576b28dfb35f11328f1cb974ca7647d9475ebb86c75ac6e3"
+            ]
+          }
+        ],
+        "linux-x64": [
+          {
+            "name": "certifi",
+            "version": "2026.7.22",
+            "sha256": [
+              "62f22742b58a1a33014a2b6b706588a8d7e2a88ae7bd1a6ebe8c992928483775"
+            ]
+          },
+          {
+            "name": "charset-normalizer",
+            "version": "3.5.2",
+            "sha256": [
+              "3d31298449090ab8d47b7b1b2a555ff73cac7ed438a08b7ac160980c7ebed649"
+            ]
+          },
+          {
+            "name": "gallery-dl",
+            "version": "1.32.15",
+            "sha256": [
+              "e8fc03eebddcd4ba816ae7a9c42548a68e7ae8a01e7c5a83d6f591e253f092a6"
+            ]
+          },
+          {
+            "name": "idna",
+            "version": "3.20",
+            "sha256": [
+              "ab7ae7122974553370f0bdb919e1a960b2cd1bc1ef0276416d896db81c14582c"
+            ]
+          },
+          {
+            "name": "requests",
+            "version": "2.34.2",
+            "sha256": [
+              "2a0d60c172f83ac6ab31e4554906c0f3b3588d37b5cb939b1c061f4907e278e0"
+            ]
+          },
+          {
+            "name": "urllib3",
+            "version": "2.8.0",
+            "sha256": [
+              "0cf3cae568d36aa9576b28dfb35f11328f1cb974ca7647d9475ebb86c75ac6e3"
+            ]
+          }
+        ],
+        "linux-arm64": [
+          {
+            "name": "certifi",
+            "version": "2026.7.22",
+            "sha256": [
+              "62f22742b58a1a33014a2b6b706588a8d7e2a88ae7bd1a6ebe8c992928483775"
+            ]
+          },
+          {
+            "name": "charset-normalizer",
+            "version": "3.5.2",
+            "sha256": [
+              "b91363207bd9dc966a691e959bb47f64b30f7ac4b072be9968b366982f7db77c"
+            ]
+          },
+          {
+            "name": "gallery-dl",
+            "version": "1.32.15",
+            "sha256": [
+              "e8fc03eebddcd4ba816ae7a9c42548a68e7ae8a01e7c5a83d6f591e253f092a6"
+            ]
+          },
+          {
+            "name": "idna",
+            "version": "3.20",
+            "sha256": [
+              "ab7ae7122974553370f0bdb919e1a960b2cd1bc1ef0276416d896db81c14582c"
+            ]
+          },
+          {
+            "name": "requests",
+            "version": "2.34.2",
+            "sha256": [
+              "2a0d60c172f83ac6ab31e4554906c0f3b3588d37b5cb939b1c061f4907e278e0"
+            ]
+          },
+          {
+            "name": "urllib3",
+            "version": "2.8.0",
+            "sha256": [
+              "0cf3cae568d36aa9576b28dfb35f11328f1cb974ca7647d9475ebb86c75ac6e3"
+            ]
+          }
+        ]
+      }
+    },
+    "yt-dlp": {
+      "requirement": "yt-dlp[default]",
+      "version": "2026.8.19",
+      "lock": {
+        "win32-x64": [
+          {
+            "name": "brotli",
+            "version": "1.2.0",
+            "sha256": [
+              "b35c13ce241abdd44cb8ca70683f20c0c079728a36a996297adb5334adfc1c44"
+            ]
+          },
+          {
+            "name": "certifi",
+            "version": "2026.7.22",
+            "sha256": [
+              "62f22742b58a1a33014a2b6b706588a8d7e2a88ae7bd1a6ebe8c992928483775"
+            ]
+          },
+          {
+            "name": "charset-normalizer",
+            "version": "3.5.2",
+            "sha256": [
+              "780fbe7cab297b81dad9fb8dc5eb003c0468ffb0d9e5f65068c53a34661a96bc"
+            ]
+          },
+          {
+            "name": "idna",
+            "version": "3.20",
+            "sha256": [
+              "ab7ae7122974553370f0bdb919e1a960b2cd1bc1ef0276416d896db81c14582c"
+            ]
+          },
+          {
+            "name": "mutagen",
+            "version": "1.48.1",
+            "sha256": [
+              "4f077fe87d3fc7fba259aa63d8c026b18382ca6a42ef37c61e16f1b1b5b82fe7"
+            ]
+          },
+          {
+            "name": "pycryptodomex",
+            "version": "3.24.0",
+            "sha256": [
+              "55f22d72250d7923aac3c2442ec6a1dd8774d2efa3bdcb0f68d5e137d372268e"
+            ]
+          },
+          {
+            "name": "requests",
+            "version": "2.34.2",
+            "sha256": [
+              "2a0d60c172f83ac6ab31e4554906c0f3b3588d37b5cb939b1c061f4907e278e0"
+            ]
+          },
+          {
+            "name": "urllib3",
+            "version": "2.8.0",
+            "sha256": [
+              "0cf3cae568d36aa9576b28dfb35f11328f1cb974ca7647d9475ebb86c75ac6e3"
+            ]
+          },
+          {
+            "name": "websockets",
+            "version": "17.2",
+            "sha256": [
+              "faa763b677e96f1beccc6b4d7e8c079dfeed2f249f57a19debc321b519ee64ec"
+            ]
+          },
+          {
+            "name": "yt-dlp",
+            "version": "2026.8.19",
+            "sha256": [
+              "1d57897e94c6665a0a6f9bc54b34e584284e32c034ffab3a7df25d8f7b24eedf"
+            ]
+          },
+          {
+            "name": "yt-dlp-ejs",
+            "version": "0.8.0",
+            "sha256": [
+              "79300e5fca7f937a1eeede11f0456862c1b41107ce1d726871e0207424f4bdb4"
+            ]
+          }
+        ],
+        "win32-arm64": {
+          "unsupported": "pip failed: ERROR: No matching distribution found for brotli; (implementation_name == \"cpython\" and sys_platform != \"ios\") and extra == \"default\""
+        },
+        "win32-ia32": [
+          {
+            "name": "brotli",
+            "version": "1.2.0",
+            "sha256": [
+              "e99befa0b48f3cd293dafeacdd0d191804d105d279e0b387a32054c1180f3161"
+            ]
+          },
+          {
+            "name": "certifi",
+            "version": "2026.7.22",
+            "sha256": [
+              "62f22742b58a1a33014a2b6b706588a8d7e2a88ae7bd1a6ebe8c992928483775"
+            ]
+          },
+          {
+            "name": "charset-normalizer",
+            "version": "3.5.2",
+            "sha256": [
+              "db19d07e2e0129e974a0e65d0064fc222a446cd5122c2fd4184d2af9fc734a9e"
+            ]
+          },
+          {
+            "name": "idna",
+            "version": "3.20",
+            "sha256": [
+              "ab7ae7122974553370f0bdb919e1a960b2cd1bc1ef0276416d896db81c14582c"
+            ]
+          },
+          {
+            "name": "mutagen",
+            "version": "1.48.1",
+            "sha256": [
+              "4f077fe87d3fc7fba259aa63d8c026b18382ca6a42ef37c61e16f1b1b5b82fe7"
+            ]
+          },
+          {
+            "name": "pycryptodomex",
+            "version": "3.24.0",
+            "sha256": [
+              "fab40542a863cc142a763aa92630d613925fe3e937bea3ba5fb735e0c42d4f96"
+            ]
+          },
+          {
+            "name": "requests",
+            "version": "2.34.2",
+            "sha256": [
+              "2a0d60c172f83ac6ab31e4554906c0f3b3588d37b5cb939b1c061f4907e278e0"
+            ]
+          },
+          {
+            "name": "urllib3",
+            "version": "2.8.0",
+            "sha256": [
+              "0cf3cae568d36aa9576b28dfb35f11328f1cb974ca7647d9475ebb86c75ac6e3"
+            ]
+          },
+          {
+            "name": "websockets",
+            "version": "17.2",
+            "sha256": [
+              "b25659ab2d655d742701487d5591e3f98e8f8b329fc999e05e3d59691ab344a1"
+            ]
+          },
+          {
+            "name": "yt-dlp",
+            "version": "2026.8.19",
+            "sha256": [
+              "1d57897e94c6665a0a6f9bc54b34e584284e32c034ffab3a7df25d8f7b24eedf"
+            ]
+          },
+          {
+            "name": "yt-dlp-ejs",
+            "version": "0.8.0",
+            "sha256": [
+              "79300e5fca7f937a1eeede11f0456862c1b41107ce1d726871e0207424f4bdb4"
+            ]
+          }
+        ],
+        "darwin-x64": [
+          {
+            "name": "brotli",
+            "version": "1.2.0",
+            "sha256": [
+              "7a61c06b334bd99bc5ae84f1eeb36bfe01400264b3c352f968c6e30a10f9d08b"
+            ]
+          },
+          {
+            "name": "certifi",
+            "version": "2026.7.22",
+            "sha256": [
+              "62f22742b58a1a33014a2b6b706588a8d7e2a88ae7bd1a6ebe8c992928483775"
+            ]
+          },
+          {
+            "name": "charset-normalizer",
+            "version": "3.5.2",
+            "sha256": [
+              "ed2a239c0ea213acc1908150a3037257083c7c083128f1a4cec2ec4b97dca491"
+            ]
+          },
+          {
+            "name": "idna",
+            "version": "3.20",
+            "sha256": [
+              "ab7ae7122974553370f0bdb919e1a960b2cd1bc1ef0276416d896db81c14582c"
+            ]
+          },
+          {
+            "name": "mutagen",
+            "version": "1.48.1",
+            "sha256": [
+              "4f077fe87d3fc7fba259aa63d8c026b18382ca6a42ef37c61e16f1b1b5b82fe7"
+            ]
+          },
+          {
+            "name": "pycryptodomex",
+            "version": "3.24.0",
+            "sha256": [
+              "42c8221e3a4ca04b070cb388fca004815f6544951bfb2cc6c7958e293b7caf64"
+            ]
+          },
+          {
+            "name": "requests",
+            "version": "2.34.2",
+            "sha256": [
+              "2a0d60c172f83ac6ab31e4554906c0f3b3588d37b5cb939b1c061f4907e278e0"
+            ]
+          },
+          {
+            "name": "urllib3",
+            "version": "2.8.0",
+            "sha256": [
+              "0cf3cae568d36aa9576b28dfb35f11328f1cb974ca7647d9475ebb86c75ac6e3"
+            ]
+          },
+          {
+            "name": "websockets",
+            "version": "17.2",
+            "sha256": [
+              "3621f3686397708b8eeabfd0a9d75267c1f29a7537d2fe31e65d099e71587fa4"
+            ]
+          },
+          {
+            "name": "yt-dlp",
+            "version": "2026.8.19",
+            "sha256": [
+              "1d57897e94c6665a0a6f9bc54b34e584284e32c034ffab3a7df25d8f7b24eedf"
+            ]
+          },
+          {
+            "name": "yt-dlp-ejs",
+            "version": "0.8.0",
+            "sha256": [
+              "79300e5fca7f937a1eeede11f0456862c1b41107ce1d726871e0207424f4bdb4"
+            ]
+          }
+        ],
+        "darwin-arm64": [
+          {
+            "name": "brotli",
+            "version": "1.2.0",
+            "sha256": [
+              "35d382625778834a7f3061b15423919aa03e4f5da34ac8e02c074e4b75ab4f84"
+            ]
+          },
+          {
+            "name": "certifi",
+            "version": "2026.7.22",
+            "sha256": [
+              "62f22742b58a1a33014a2b6b706588a8d7e2a88ae7bd1a6ebe8c992928483775"
+            ]
+          },
+          {
+            "name": "charset-normalizer",
+            "version": "3.5.2",
+            "sha256": [
+              "ed2a239c0ea213acc1908150a3037257083c7c083128f1a4cec2ec4b97dca491"
+            ]
+          },
+          {
+            "name": "idna",
+            "version": "3.20",
+            "sha256": [
+              "ab7ae7122974553370f0bdb919e1a960b2cd1bc1ef0276416d896db81c14582c"
+            ]
+          },
+          {
+            "name": "mutagen",
+            "version": "1.48.1",
+            "sha256": [
+              "4f077fe87d3fc7fba259aa63d8c026b18382ca6a42ef37c61e16f1b1b5b82fe7"
+            ]
+          },
+          {
+            "name": "pycryptodomex",
+            "version": "3.24.0",
+            "sha256": [
+              "ef2bd306328a8447d4d2af6037efddd67ef16630876ed3ec84babd16ca558941"
+            ]
+          },
+          {
+            "name": "requests",
+            "version": "2.34.2",
+            "sha256": [
+              "2a0d60c172f83ac6ab31e4554906c0f3b3588d37b5cb939b1c061f4907e278e0"
+            ]
+          },
+          {
+            "name": "urllib3",
+            "version": "2.8.0",
+            "sha256": [
+              "0cf3cae568d36aa9576b28dfb35f11328f1cb974ca7647d9475ebb86c75ac6e3"
+            ]
+          },
+          {
+            "name": "websockets",
+            "version": "17.2",
+            "sha256": [
+              "a81e19710d48da88653473b6b9c366d47e99fe4f58e37ce415be47966748f31f"
+            ]
+          },
+          {
+            "name": "yt-dlp",
+            "version": "2026.8.19",
+            "sha256": [
+              "1d57897e94c6665a0a6f9bc54b34e584284e32c034ffab3a7df25d8f7b24eedf"
+            ]
+          },
+          {
+            "name": "yt-dlp-ejs",
+            "version": "0.8.0",
+            "sha256": [
+              "79300e5fca7f937a1eeede11f0456862c1b41107ce1d726871e0207424f4bdb4"
+            ]
+          }
+        ],
+        "linux-x64": [
+          {
+            "name": "brotli",
+            "version": "1.2.0",
+            "sha256": [
+              "072e7624b1fc4d601036ab3f4f27942ef772887e876beff0301d261210bca97f"
+            ]
+          },
+          {
+            "name": "certifi",
+            "version": "2026.7.22",
+            "sha256": [
+              "62f22742b58a1a33014a2b6b706588a8d7e2a88ae7bd1a6ebe8c992928483775"
+            ]
+          },
+          {
+            "name": "charset-normalizer",
+            "version": "3.5.2",
+            "sha256": [
+              "3d31298449090ab8d47b7b1b2a555ff73cac7ed438a08b7ac160980c7ebed649"
+            ]
+          },
+          {
+            "name": "idna",
+            "version": "3.20",
+            "sha256": [
+              "ab7ae7122974553370f0bdb919e1a960b2cd1bc1ef0276416d896db81c14582c"
+            ]
+          },
+          {
+            "name": "mutagen",
+            "version": "1.48.1",
+            "sha256": [
+              "4f077fe87d3fc7fba259aa63d8c026b18382ca6a42ef37c61e16f1b1b5b82fe7"
+            ]
+          },
+          {
+            "name": "pycryptodomex",
+            "version": "3.24.0",
+            "sha256": [
+              "556e063b52f338bd924fe5c40692cc1f50cb0453bd1d6580b7ffff2eade1a894"
+            ]
+          },
+          {
+            "name": "requests",
+            "version": "2.34.2",
+            "sha256": [
+              "2a0d60c172f83ac6ab31e4554906c0f3b3588d37b5cb939b1c061f4907e278e0"
+            ]
+          },
+          {
+            "name": "urllib3",
+            "version": "2.8.0",
+            "sha256": [
+              "0cf3cae568d36aa9576b28dfb35f11328f1cb974ca7647d9475ebb86c75ac6e3"
+            ]
+          },
+          {
+            "name": "websockets",
+            "version": "17.2",
+            "sha256": [
+              "6627b913b8586b1c06db9516b31dd0dfbc621de3bb9312616d92a7e44f268a5b"
+            ]
+          },
+          {
+            "name": "yt-dlp",
+            "version": "2026.8.19",
+            "sha256": [
+              "1d57897e94c6665a0a6f9bc54b34e584284e32c034ffab3a7df25d8f7b24eedf"
+            ]
+          },
+          {
+            "name": "yt-dlp-ejs",
+            "version": "0.8.0",
+            "sha256": [
+              "79300e5fca7f937a1eeede11f0456862c1b41107ce1d726871e0207424f4bdb4"
+            ]
+          }
+        ],
+        "linux-arm64": [
+          {
+            "name": "brotli",
+            "version": "1.2.0",
+            "sha256": [
+              "acec55bb7c90f1dfc476126f9711a8e81c9af7fb617409a9ee2953115343f08d"
+            ]
+          },
+          {
+            "name": "certifi",
+            "version": "2026.7.22",
+            "sha256": [
+              "62f22742b58a1a33014a2b6b706588a8d7e2a88ae7bd1a6ebe8c992928483775"
+            ]
+          },
+          {
+            "name": "charset-normalizer",
+            "version": "3.5.2",
+            "sha256": [
+              "b91363207bd9dc966a691e959bb47f64b30f7ac4b072be9968b366982f7db77c"
+            ]
+          },
+          {
+            "name": "idna",
+            "version": "3.20",
+            "sha256": [
+              "ab7ae7122974553370f0bdb919e1a960b2cd1bc1ef0276416d896db81c14582c"
+            ]
+          },
+          {
+            "name": "mutagen",
+            "version": "1.48.1",
+            "sha256": [
+              "4f077fe87d3fc7fba259aa63d8c026b18382ca6a42ef37c61e16f1b1b5b82fe7"
+            ]
+          },
+          {
+            "name": "pycryptodomex",
+            "version": "3.24.0",
+            "sha256": [
+              "da9996407d03684221a4e1603b70fad97d8772185e5f75addcd97fcbc4c3281f"
+            ]
+          },
+          {
+            "name": "requests",
+            "version": "2.34.2",
+            "sha256": [
+              "2a0d60c172f83ac6ab31e4554906c0f3b3588d37b5cb939b1c061f4907e278e0"
+            ]
+          },
+          {
+            "name": "urllib3",
+            "version": "2.8.0",
+            "sha256": [
+              "0cf3cae568d36aa9576b28dfb35f11328f1cb974ca7647d9475ebb86c75ac6e3"
+            ]
+          },
+          {
+            "name": "websockets",
+            "version": "17.2",
+            "sha256": [
+              "0198c4ec6a3406a2f7557c032967de426474c2c995c81076585e09d29a9f407b"
+            ]
+          },
+          {
+            "name": "yt-dlp",
+            "version": "2026.8.19",
+            "sha256": [
+              "1d57897e94c6665a0a6f9bc54b34e584284e32c034ffab3a7df25d8f7b24eedf"
+            ]
+          },
+          {
+            "name": "yt-dlp-ejs",
+            "version": "0.8.0",
+            "sha256": [
+              "79300e5fca7f937a1eeede11f0456862c1b41107ce1d726871e0207424f4bdb4"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

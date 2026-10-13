@@ -1,0 +1,507 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --motion-ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+    --motion-ease-in: cubic-bezier(0.7, 0, 0.84, 0);
+    --motion-fast: 160ms;
+    --motion-short: 200ms;
+    --motion-medium: 220ms;
+
+    /**
+     * Yami graphite identity expressed as shadcn semantic tokens (HSL channels).
+     * Source hex: bg #090908 · surface #10100f · text #e8e6e3 · border #242220 …
+     */
+    --background: 60 3% 3%;
+    --foreground: 40 11% 90%;
+    --card: 40 3% 6%;
+    --card-foreground: 40 11% 90%;
+    --popover: 40 3% 6%;
+    --popover-foreground: 40 11% 90%;
+    --primary: 40 11% 90%;
+    --primary-foreground: 60 3% 3%;
+    --secondary: 40 4% 5%;
+    --secondary-foreground: 36 8% 77%;
+    --muted: 30 4% 9%;
+    --muted-foreground: 33 5% 52%;
+    --accent: 36 5% 11%;
+    --accent-foreground: 40 11% 90%;
+    --destructive: 0 22% 57%;
+    --destructive-foreground: 40 11% 90%;
+    --border: 30 5% 14%;
+    --input: 40 4% 5%;
+    --ring: 36 5% 58%;
+    /** Surface default (Card, Dialog shell). Controls use md = calc(this − 4px). */
+    --radius: 12px;
+    --radius-small: calc(var(--radius) - 8px);
+    --radius-control: calc(var(--radius) - 4px);
+    --radius-surface: var(--radius);
+    --radius-surface-lg: calc(var(--radius) + 4px);
+
+    /**
+     * Scale matrix (single source of truth — sidebar min-h-11 / text-sm / 18px icons is the perceptual anchor).
+     * Typography: 2xs 13 · xs 14 · sm/base 16 · md 18 · lg 22 · xl 24 (see tailwind.config fontSize).
+     */
+    --scale-icon-inline: 1.125rem;
+    --scale-icon-compact: 1rem;
+    --scale-control-height: 2.625rem;
+    --scale-control-height-compact: 2.25rem;
+    --scale-control-height-lg: 2.875rem;
+    --scale-nav-row: 2.75rem;
+    --scale-icon-button: 2.25rem;
+    --scale-icon-button-default: 2.5rem;
+
+    --border-2: 30 5% 18%;
+    --border-3: 33 6% 23%;
+    --text-2: 36 8% 77%;
+    --text-3: 33 5% 58%;
+    --accent-hot: 33 5% 52%;
+    --accent-muted: 30 5% 23%;
+    --ok: 143 13% 48%;
+    --warn: 40 28% 53%;
+    --err-strong: 0 22% 63%;
+    --info: 30 4% 52%;
+  }
+
+  * {
+    @apply border-border;
+    box-sizing: border-box;
+  }
+  *:focus {
+    outline: none;
+  }
+  *:focus-visible {
+    outline: 2px solid hsl(var(--ring));
+    outline-offset: 2px;
+    border-radius: calc(var(--radius) - 4px);
+  }
+  html,
+  body,
+  #root {
+    height: 100%;
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  body {
+    @apply bg-background text-foreground;
+    background-image: linear-gradient(180deg, #0c0c0b 0%, hsl(var(--background)) 50%, #060605 100%);
+    font-family: theme('fontFamily.sans');
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.55;
+    font-feature-settings:
+      'kern' 1,
+      'liga' 1;
+    position: relative;
+  }
+  html.tray-popup,
+  html.tray-popup body {
+    background: transparent;
+    overflow: visible;
+  }
+  html.tray-popup #root {
+    height: 100%;
+    overflow: visible;
+    background: transparent;
+  }
+  #root {
+    position: relative;
+    z-index: 1;
+  }
+  kbd {
+    font-family: theme('fontFamily.mono');
+    font-size: 12px;
+    padding: 3px 7px;
+    border: 1px solid theme('colors.border-2');
+    border-radius: theme('borderRadius.sm');
+    background: theme('colors.surface-2');
+    color: theme('colors.text-2');
+    line-height: 1;
+  }
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: rgba(10, 8, 7, 0.9);
+    border-radius: 9999px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, theme('colors.border-3') 0%, theme('colors.border-2') 100%);
+    border: 2px solid rgba(9, 9, 8, 0.9);
+    border-radius: 9999px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, theme('colors.text-4') 0%, theme('colors.border-3') 100%);
+  }
+}
+
+@layer components {
+  /**
+   * Type scale (present comfortable):
+   * meta 13 → caption/label 14 → body/control 16 → heading 18 semibold → page 22–24 → brand 16.
+   */
+  .type-brand {
+    @apply font-sans text-sm font-semibold tracking-tight text-text;
+  }
+
+  .type-page {
+    @apply font-sans text-xl font-semibold leading-snug tracking-tight text-text;
+  }
+
+  .type-heading {
+    @apply font-sans text-md font-semibold leading-snug tracking-tight text-text;
+  }
+
+  .type-body {
+    @apply font-sans text-sm leading-relaxed text-text-2;
+  }
+
+  .type-label {
+    @apply font-sans text-xs font-medium leading-snug text-text-2;
+  }
+
+  .type-caption {
+    @apply font-sans text-xs leading-relaxed text-text-3;
+  }
+
+  .type-meta {
+    @apply font-mono text-2xs leading-relaxed text-text-4 tabular-nums;
+  }
+
+  .type-nav-group {
+    @apply font-sans text-xs font-medium tracking-wide text-text-4;
+  }
+
+  .type-code {
+    @apply font-mono text-xs leading-relaxed text-text-3 break-all;
+  }
+}
+
+@layer utilities {
+  .font-mono {
+    font-family: theme('fontFamily.mono');
+  }
+  .text-balance {
+    text-wrap: balance;
+  }
+  /** Lucide inline / control icons — matches approved sidebar icon scale (18px). */
+  .icon-inline {
+    width: var(--scale-icon-inline);
+    height: var(--scale-icon-inline);
+    flex-shrink: 0;
+  }
+}
+
+/**
+ * Reduced motion: every CSS animation/transition collapses to (almost) nothing.
+ * framer-motion is configured with `reducedMotion="user"` for JS animations.
+ */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/** Shell com grade e vinheta discretas (composição de fundo). */
+.app-shell {
+  position: relative;
+  isolation: isolate;
+}
+
+.app-shell::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image: radial-gradient(ellipse 70% 45% at 50% -8%, rgba(255, 255, 255, 0.018), transparent 58%);
+  background-size: 100% 100%;
+}
+
+.app-shell > * {
+  position: relative;
+  z-index: 1;
+}
+
+.download-hero {
+  position: relative;
+  width: 100%;
+}
+
+.download-composer-dock {
+  will-change: transform;
+  overflow: visible;
+}
+
+.download-hero--idle {
+  overflow: visible;
+  transform-origin: center center;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .download-composer-dock {
+    will-change: auto;
+  }
+}
+
+.download-workspace {
+  container-type: inline-size;
+  container-name: download-workspace;
+}
+
+.download-sidebar {
+  box-shadow: inset -1px 0 0 rgba(255, 255, 255, 0.02);
+}
+
+.download-composer--thread {
+  border-radius: theme('borderRadius.lg');
+  background: rgba(16, 16, 15, 0.96);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transform: translateZ(0);
+  contain: layout style paint;
+  box-shadow:
+    0 10px 28px rgba(0, 0, 0, 0.42),
+    0 0 0 1px rgba(255, 255, 255, 0.04);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .download-composer--thread {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    background: rgba(16, 16, 15, 0.98);
+  }
+}
+
+.download-composer--thread:focus-within {
+  box-shadow:
+    0 12px 32px rgba(0, 0, 0, 0.46),
+    0 0 0 1px rgba(255, 255, 255, 0.06);
+}
+
+.result-workspace {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  height: 100%;
+}
+
+.result-card {
+  transition:
+    border-color 0.15s var(--motion-ease-out, cubic-bezier(0.16, 1, 0.3, 1)),
+    box-shadow 0.2s var(--motion-ease-out, cubic-bezier(0.16, 1, 0.3, 1));
+}
+
+.result-card:hover {
+  border-color: theme('colors.border-3');
+}
+
+.result-media-thumb img,
+.result-media-thumb video {
+  transition: transform 0.28s var(--motion-ease-out, cubic-bezier(0.16, 1, 0.3, 1));
+}
+
+.result-media-thumb:hover img,
+.result-media-thumb:hover video {
+  transform: scale(1.03);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .result-media-thumb img,
+  .result-media-thumb video {
+    transition: none;
+  }
+
+  .result-media-thumb:hover img,
+  .result-media-thumb:hover video {
+    transform: none;
+  }
+}
+
+.download-composer {
+  position: relative;
+  transition:
+    box-shadow 0.24s cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow:
+    0 10px 26px rgba(0, 0, 0, 0.32),
+    0 0 0 1px rgba(255, 255, 255, 0.025);
+}
+
+.download-composer:focus-within {
+  box-shadow:
+    0 12px 28px rgba(0, 0, 0, 0.36),
+    0 0 0 1px rgba(255, 255, 255, 0.045);
+}
+
+/**
+ * Glow ambient do composer (hero + tray).
+ * Respiração lenta no ::after (opacity ~6.5s). No foco, o halo fica um pouco
+ * mais contido — ainda visível — com transição longa, sem cortar a respiração.
+ */
+.download-composer:not(.download-composer--thread) {
+  --composer-elev: 0 12px 28px rgba(0, 0, 0, 0.46), 0 0 0 1px rgba(255, 255, 255, 0.035);
+  --composer-glow:
+    0 0 32px 10px rgba(255, 255, 255, 0.07), 0 0 78px 32px rgba(255, 255, 255, 0.035),
+    0 0 130px 60px rgba(138, 132, 124, 0.08);
+  --composer-glow-focus:
+    0 0 24px 6px rgba(255, 255, 255, 0.045), 0 0 56px 20px rgba(255, 255, 255, 0.022),
+    0 0 96px 40px rgba(138, 132, 124, 0.05);
+  --composer-glow-ease: cubic-bezier(0.45, 0.05, 0.25, 1);
+  overflow: visible;
+  isolation: isolate;
+  box-shadow: var(--composer-elev);
+  transition:
+    box-shadow 1.1s var(--composer-glow-ease),
+    border-color 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.download-composer:not(.download-composer--thread)::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  z-index: -1;
+  box-shadow: var(--composer-glow);
+  opacity: 0;
+  filter: brightness(1);
+  transition:
+    opacity 1.35s var(--composer-glow-ease),
+    box-shadow 1.45s var(--composer-glow-ease),
+    filter 1.45s var(--composer-glow-ease);
+}
+
+.download-composer:not(.download-composer--thread).download-composer--glow-enter::after {
+  animation: idle-composer-glow-expand 2.4s cubic-bezier(0.1, 0.85, 0.15, 1) forwards;
+}
+
+.download-composer:not(.download-composer--thread).download-composer--glow-lit::after {
+  opacity: 1;
+  animation: idle-composer-glow-breathe 6.5s ease-in-out infinite;
+}
+
+@keyframes idle-composer-glow-expand {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0.55;
+  }
+}
+
+@keyframes idle-composer-glow-breathe {
+  0%,
+  100% {
+    opacity: 0.42;
+  }
+  50% {
+    opacity: 0.62;
+  }
+}
+
+@keyframes runtime-progress-indeterminate {
+  0% {
+    transform: translateX(-120%);
+  }
+  100% {
+    transform: translateX(340%);
+  }
+}
+
+.runtime-progress-indeterminate {
+  animation: runtime-progress-indeterminate 1.4s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .runtime-progress-indeterminate {
+    animation: none;
+    width: 100%;
+    opacity: 0.45;
+    transform: none;
+  }
+}
+
+.download-composer:not(.download-composer--thread):focus-within {
+  /* The inputs inside have no outline of their own: this border is the focus indicator (≥ 3:1). */
+  border-color: theme('colors.focus');
+  box-shadow:
+    0 12px 30px rgba(0, 0, 0, 0.48),
+    0 0 0 1px rgba(255, 255, 255, 0.05);
+}
+
+.download-composer:not(.download-composer--thread).download-composer--glow-lit:focus-within::after {
+  box-shadow: var(--composer-glow-focus);
+  filter: brightness(0.82);
+}
+
+.download-activity {
+  box-shadow:
+    0 8px 22px rgba(0, 0, 0, 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 0.025);
+}
+
+@container download-workspace (max-width: 560px) {
+  .composer-toolbar {
+    grid-template-columns: minmax(0, 1fr) auto;
+  }
+
+  .composer-status {
+    display: none;
+  }
+
+  .composer-engine-detail {
+    display: none;
+  }
+
+  .download-composer {
+    border-radius: theme('borderRadius.lg');
+  }
+}
+
+.preview-video-player:fullscreen,
+.preview-video-player:-webkit-full-screen {
+  width: 100%;
+  height: 100%;
+  background: #090908;
+}
+
+.preview-video-player video::-webkit-media-controls,
+.preview-video-player video::-webkit-media-controls-enclosure,
+.preview-video-player video::-webkit-media-controls-overlay-play-button {
+  display: none !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .app-shell::before {
+    opacity: 0.55;
+  }
+
+  .download-composer:not(.download-composer--thread).download-composer--glow-enter::after,
+  .download-composer:not(.download-composer--thread).download-composer--glow-lit::after {
+    animation: none;
+    transition: none;
+  }
+
+  .download-composer:not(.download-composer--thread).download-composer--glow-enter::after,
+  .download-composer:not(.download-composer--thread).download-composer--glow-lit::after {
+    opacity: 0.5;
+    box-shadow: var(--composer-glow);
+    filter: brightness(1);
+  }
+
+  .download-composer:not(.download-composer--thread).download-composer--glow-lit:focus-within::after {
+    opacity: 0.72;
+    box-shadow: var(--composer-glow-focus);
+    filter: brightness(0.82);
+  }
+}

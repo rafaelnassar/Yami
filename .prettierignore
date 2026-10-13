@@ -1,0 +1,17 @@
+# Build output
+dist/
+dist-electron/
+release/
+release-audit/
+coverage/
+*.tsbuildinfo
+
+# Dependencies and lockfile (npm owns its formatting)
+node_modules/
+package-lock.json
+
+# Binary assets
+resources/icons/
+
+# Written by `npm run runtime:pin` (hashes are verified byte-for-byte by tooling)
+src/host/infrastructure/runtime/runtime-manifest.json

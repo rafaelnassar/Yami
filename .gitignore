@@ -1,0 +1,69 @@
+# Dependencies
+node_modules/
+
+# Build outputs (anchored with a leading `/`: an unanchored `downloads/` or `release/`
+# would also hide source folders such as src/host/application/downloads/)
+/dist/
+/dist-electron/
+/release/
+/release-audit/
+/.vite/
+/coverage/
+*.tsbuildinfo
+
+# Local runtime / user data (never commit — downloads, cookies, legacy host state)
+/downloads/
+/cookies/
+/native-host/
+
+# Secrets & credentials (keys, certs, env files)
+.env
+.env.*
+!.env.example
+*.pem
+*.pfx
+*.p12
+*.key
+*.crt
+credentials.json
+**/credentials.json
+
+# Binaries / packaged artifacts dropped in the worktree
+*.exe
+*.crx
+*.zip
+*.dmg
+*.AppImage
+*.blockmap
+latest.yml
+latest-mac.yml
+latest-linux.yml
+
+# Logs & caches
+*.log
+.codex-*.log
+.DS_Store
+Thumbs.db
+*.swp
+*~
+
+# Editor / AI tooling (never publish)
+.cursor/
+.claude/
+.agents/
+.codex/
+.idea/
+.vscode/
+*.mdc
+AGENTS.md
+CLAUDE.md
+.cursorrules
+
+# OS / local scratch
+*.tmp
+*.bak
+*.old
+*.orig
+.cache/
+tmp/
+temp/

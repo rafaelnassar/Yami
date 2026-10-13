@@ -1,0 +1,87 @@
+# Typecheck, lint, test and build on every push and pull request (Windows is the primary target; Linux keeps
+# the code portable and catches path/case bugs).
+name: CI
+
+on:
+  push:
+    branches: ['**'] # Branches only: version tags are handled by release.yml.
+  pull_request:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  check:
+    name: check (${{ matrix.os }})
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 30
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [windows-latest, ubuntu-latest]
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 22.x
+          cache: npm
+
+      - run: npm ci
+      - run: npm run check:secrets
+      - run: npm run format:check
+      - run: npm run typecheck
+      - run: npm run lint
+      - run: npm test
+      # Domain + kernel coverage gate (full UI/infra coverage is tracked separately via unit tests).
+      - run: npm run test:coverage
+      - run: npm run build
+
+      # The host end-to-end tests again, against the production bundle instead of the sources.
+      - name: Host end-to-end tests (production bundle)
+        run: node scripts/test.mjs tests/host-
+        env:
+          YAMI_HOST_ENTRY: dist-electron/host.cjs
+
+  smoke:
+    # Launches the packaged app (preload in sandbox, CSP, asar, fuses, host utilityProcess) and
+    # waits until the window rendered and the host is ready. See src/main/app/smoke-test.ts.
+    name: packaged smoke test (windows)
+    runs-on: windows-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 22.x
+          cache: npm
+
+      - run: npm ci
+      - run: npm run pack
+      - run: npm run smoke
+
+  release-readiness:
+    # Separate job so a missing pin shows up on every push without hiding real check failures.
+    # `npm run dist` / the release workflow refuse to package until this passes.
+    name: runtime tools pinned
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 22.x
+
+      - run: npm run runtime:verify

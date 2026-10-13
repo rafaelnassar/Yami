@@ -1,0 +1,102 @@
+/** `runtimeProgress.<code>` — tool install/update progress lines (owned by the host runtime module). */
+import { defineMessages } from '../define.ts';
+
+export const runtimeProgressMessages = defineMessages(
+  {
+    // Operation level (tool = null)
+    install: 'A preparar as ferramentas…',
+    update: 'A atualizar as ferramentas…',
+    checkUpdates: 'A procurar atualizações…',
+    done: 'Concluído.',
+    failed: 'Não foi possível concluir.',
+    alreadyInstalled: 'As ferramentas já estão instaladas.',
+    upToDate: 'As ferramentas já estão na versão mais recente.',
+    updatesFound_one: '{count} atualização disponível.',
+    updatesFound_other: '{count} atualizações disponíveis.',
+    noUpdates: 'Tudo em dia. Nenhuma atualização pendente.',
+
+    // Per tool
+    preparing: 'A preparar {name}…',
+    downloading: 'A baixar {name}…',
+    downloadingPercent: 'A baixar {name}… {percent}%',
+    verifying: 'A verificar a integridade de {name}…',
+    extracting: 'A extrair {name}…',
+    installing: 'A instalar {name}…',
+    installed: '{name} {version} instalado.',
+    toolFailed: 'Falha ao instalar {name}.',
+    checking: 'A procurar a versão mais recente de {name}…',
+    checked: '{name}: versão mais recente {version}.',
+
+    // pip (python mode)
+    pipInstalling: 'A instalar {packages} via pip…',
+    pipCollecting: 'A obter {package}…',
+    pipDownloading: 'A baixar {package}…',
+    pipDownloadingGeneric: 'A baixar pacote Python…',
+    pipProgress: 'A instalar {package} ({current}/{total})…',
+    pipProgressGeneric: 'A instalar pacotes ({current}/{total})…',
+    pipInstallingCollected: 'A instalar pacotes Python…',
+    pipDone: 'Pacotes Python instalados.'
+  },
+  {
+    en: {
+      install: 'Preparing the tools…',
+      update: 'Updating the tools…',
+      checkUpdates: 'Checking for updates…',
+      done: 'Done.',
+      failed: 'Could not finish.',
+      alreadyInstalled: 'The tools are already installed.',
+      upToDate: 'The tools are already up to date.',
+      updatesFound_one: '{count} update available.',
+      updatesFound_other: '{count} updates available.',
+      noUpdates: 'All up to date. No pending updates.',
+      preparing: 'Preparing {name}…',
+      downloading: 'Downloading {name}…',
+      downloadingPercent: 'Downloading {name}… {percent}%',
+      verifying: 'Verifying the integrity of {name}…',
+      extracting: 'Extracting {name}…',
+      installing: 'Installing {name}…',
+      installed: '{name} {version} installed.',
+      toolFailed: 'Failed to install {name}.',
+      checking: 'Checking the latest version of {name}…',
+      checked: '{name}: latest version {version}.',
+      pipInstalling: 'Installing {packages} with pip…',
+      pipCollecting: 'Fetching {package}…',
+      pipDownloading: 'Downloading {package}…',
+      pipDownloadingGeneric: 'Downloading Python package…',
+      pipProgress: 'Installing {package} ({current}/{total})…',
+      pipProgressGeneric: 'Installing packages ({current}/{total})…',
+      pipInstallingCollected: 'Installing Python packages…',
+      pipDone: 'Python packages installed.'
+    },
+    es: {
+      install: 'Preparando las herramientas…',
+      update: 'Actualizando las herramientas…',
+      checkUpdates: 'Buscando actualizaciones…',
+      done: 'Listo.',
+      failed: 'No se pudo completar.',
+      alreadyInstalled: 'Las herramientas ya están instaladas.',
+      upToDate: 'Las herramientas ya están en la última versión.',
+      updatesFound_one: '{count} actualización disponible.',
+      updatesFound_other: '{count} actualizaciones disponibles.',
+      noUpdates: 'Todo al día. No hay actualizaciones pendientes.',
+      preparing: 'Preparando {name}…',
+      downloading: 'Descargando {name}…',
+      downloadingPercent: 'Descargando {name}… {percent}%',
+      verifying: 'Verificando la integridad de {name}…',
+      extracting: 'Extrayendo {name}…',
+      installing: 'Instalando {name}…',
+      installed: '{name} {version} instalado.',
+      toolFailed: 'Error al instalar {name}.',
+      checking: 'Buscando la última versión de {name}…',
+      checked: '{name}: última versión {version}.',
+      pipInstalling: 'Instalando {packages} con pip…',
+      pipCollecting: 'Obteniendo {package}…',
+      pipDownloading: 'Descargando {package}…',
+      pipDownloadingGeneric: 'Descargando paquete de Python…',
+      pipProgress: 'Instalando {package} ({current}/{total})…',
+      pipProgressGeneric: 'Instalando paquetes ({current}/{total})…',
+      pipInstallingCollected: 'Instalando paquetes de Python…',
+      pipDone: 'Paquetes de Python instalados.'
+    }
+  }
+);
