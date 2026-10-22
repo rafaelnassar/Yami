@@ -43,7 +43,9 @@ describe('StaticEngineRegistry', () => {
       secretConfigFile: null,
       platform: 'linux'
     }).args;
-    assert.ok(args.includes('extractor.reddit.videos=ytdl'));
+    assert.ok(args.includes('extractor.reddit.videos=dash'));
+    assert.ok(args.includes('extractor.fanbox.embeds=ytdl'));
+    assert.ok(args.includes('extractor.facebook.videos=ytdl'));
   });
 });
 

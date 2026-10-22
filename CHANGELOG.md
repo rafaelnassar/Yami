@@ -5,6 +5,16 @@ Todas as mudanças relevantes do Yami ficam registradas aqui. O formato segue o
 
 ## [Não lançado]
 
+### Corrigido
+
+- Downloads do Reddit voltaram a funcionar. O Reddit bloqueia as rotas JSON ("You've been blocked by
+  network security.") para qualquer User-Agent de navegador — inclusive o padrão do gallery-dl —, então
+  o app passa a enviar um User-Agent de leitor de feed **só** ao extrator do Reddit, sem alterar mais
+  nada.
+- Vídeos do Reddit voltaram a baixar **com áudio**: o gallery-dl agora usa o manifesto DASH do post (que
+  o yt-dlp baixa anonimamente) em vez da URL do post, que o yt-dlp passou a resolver apenas com uma
+  conta conectada e que falhava todos os vídeos.
+
 ## [2.0.0] - ainda não lançado
 
 Reescrita completa do app sobre uma arquitetura em camadas (Clean Architecture/DDD), mantendo o comportamento da

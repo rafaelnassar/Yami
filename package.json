@@ -1,7 +1,7 @@
 {
   "name": "yami",
   "productName": "Yami",
-  "version": "2.0.2",
+  "version": "2.0.4",
   "description": "App desktop para gallery-dl e yt-dlp — fila, biblioteca e notificações.",
   "author": {
     "name": "Rafael Nassar",

@@ -17,10 +17,12 @@ export const GALLERY_DL_SECRET_CONFIG_FILE = 'gallery-dl-secrets.json';
 
 export interface GalleryDlAdapterOptions {
   /**
-   * Whether gallery-dl may hand Reddit/Fanbox/Facebook videos to its `ytdl`
-   * downloader. That downloader imports the `yt_dlp` Python module, which a
-   * standalone gallery-dl build may lack (spec 03 Q7), so the composition root
-   * decides. Evaluated per invocation. Default: never.
+   * Whether gallery-dl may hand Fanbox/Facebook videos to its `ytdl` downloader.
+   * That downloader imports the `yt_dlp` Python module, which a standalone
+   * gallery-dl build may lack (spec 03 Q7), so the composition root decides.
+   * Reddit is not gated: its DASH manifest is pinned in the argument vector and
+   * still runs through the same `ytdl` downloader. Evaluated per invocation.
+   * Default: never.
    */
   readonly delegateVideosToYtdl?: () => boolean;
 }

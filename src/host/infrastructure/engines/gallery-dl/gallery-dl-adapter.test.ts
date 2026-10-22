@@ -139,10 +139,11 @@ describe('GalleryDlAdapter (fixed quirks)', () => {
       'extractor.deviantart.quality=png',
       'extractor.pixiv.ugoira=original',
       'extractor.danbooru.ugoira=true',
-      'extractor.reddit.videos=ytdl',
+      'extractor.reddit.videos=dash',
       'extractor.fanbox.embeds=ytdl',
       'extractor.facebook.videos=ytdl',
       'extractor.reddit.api=rest',
+      `extractor.reddit.user-agent=Feedly/1.0 (+http://www.feedly.com/fetcher.html; like FeedFetcher-Google)`,
       'extractor.reddit.filename={id} {num:>02} {title}.{extension}',
       'extractor.reddit.user.directory=["Reddit","{user[name]}"]'
     ]) {
@@ -155,6 +156,18 @@ describe('GalleryDlAdapter (fixed quirks)', () => {
     assert.equal(
       opts.some((option) => option.endsWith('=ytdl')),
       false
+    );
+    // Reddit does not ride this gate: its `dash` manifest is pinned unconditionally, since
+    // the gate keys on the yt-dlp executable and `dash` is already gallery-dl's default.
+    assert.ok(opts.includes('extractor.reddit.videos=dash'));
+  });
+
+  it('sends a feed-reader User-Agent to Reddit only', () => {
+    const opts = options(new GalleryDlAdapter().buildInvocation(context()).args);
+    // Pinned literally, not via the constant: the exact string is the contract with Reddit.
+    assert.deepEqual(
+      opts.filter((option) => option.includes('.user-agent=')),
+      ['extractor.reddit.user-agent=Feedly/1.0 (+http://www.feedly.com/fetcher.html; like FeedFetcher-Google)']
     );
   });
 

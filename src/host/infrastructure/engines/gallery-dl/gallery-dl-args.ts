@@ -22,6 +22,16 @@ const REDDIT_DIRECTORY_BY_SUBCATEGORY = {
   '': REDDIT_SUBREDDIT_DIRECTORY
 };
 
+/**
+ * Reddit's network security answers the `.json` endpoints of the REST API with
+ * "You've been blocked by network security." for browser-like User-Agents — including
+ * the Firefox one gallery-dl picks on its own: the REST API clears its per-request
+ * headers, so the extractor's User-Agent is the only one that reaches Reddit. A feed
+ * reader is served normally, and scoping the value to `extractor.reddit` leaves every
+ * other site's requests (and the default User-Agent) untouched.
+ */
+const REDDIT_USER_AGENT = 'Feedly/1.0 (+http://www.feedly.com/fetcher.html; like FeedFetcher-Google)';
+
 /** `-o KEY=VALUE`, JSON-encoding anything that is not a plain string (lists, objects, booleans). */
 export function galleryDlOption(key: string, value: unknown): [string, string] {
   return ['-o', `${key}=${typeof value === 'string' ? value : JSON.stringify(value)}`];
@@ -59,7 +69,7 @@ export interface GalleryDlArgsInput {
   readonly cookieFile: string | null;
   /** Private config file with secrets (`-c`), loaded right after `--config-ignore`. */
   readonly secretConfigFile: string | null;
-  /** Let gallery-dl hand videos to its `ytdl` downloader (needs the yt_dlp module, Q7). */
+  /** Let gallery-dl hand Fanbox/Facebook videos to its `ytdl` downloader (needs the yt_dlp module, Q7). */
   readonly delegateVideosToYtdl: boolean;
 }
 
@@ -91,6 +101,13 @@ export function buildGalleryDlArgs(input: GalleryDlArgsInput): string[] {
     ...galleryDlOption('extractor.danbooru.ugoira', true),
     ...galleryDlOption('extractor.reddit.filename', REDDIT_FILENAME),
     ...galleryDlOption('extractor.reddit.api', 'rest'),
+    ...galleryDlOption('extractor.reddit.user-agent', REDDIT_USER_AGENT),
+    // `dash` hands Reddit's DASH manifest URL to the `ytdl` downloader; `ytdl` would hand it
+    // the post URL instead, which yt-dlp's Reddit extractor now refuses to resolve without a
+    // logged-in account ("Account authentication is required"), failing every video post.
+    // Pinned outside the Q7 gate on purpose: it is already gallery-dl's default, so the gate
+    // cannot change the outcome, and pinning it survives a future change of that default.
+    ...galleryDlOption('extractor.reddit.videos', 'dash'),
     ...galleryDlOption('extractor.reddit.parent-directory', true),
     ...galleryDlOption('extractor.reddit.directory', REDDIT_DIRECTORY_BY_SUBCATEGORY),
     ...galleryDlOption('extractor.reddit.subreddit.directory', REDDIT_SUBREDDIT_DIRECTORY),
@@ -98,7 +115,6 @@ export function buildGalleryDlArgs(input: GalleryDlArgsInput): string[] {
   );
   if (input.delegateVideosToYtdl) {
     args.push(
-      ...galleryDlOption('extractor.reddit.videos', 'ytdl'),
       ...galleryDlOption('extractor.fanbox.embeds', 'ytdl'),
       ...galleryDlOption('extractor.facebook.videos', 'ytdl')
     );

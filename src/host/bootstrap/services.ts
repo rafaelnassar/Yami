@@ -79,7 +79,7 @@ export function wireServices(input: ServiceWiringInput): WiredServices {
   const { infra, events, notices, accounts, settings } = input;
   const store = infra.persistence.context;
   const runtime = createRuntime(input);
-  // gallery-dl may delegate video posts to yt-dlp only when yt-dlp is installed.
+  // gallery-dl may hand Fanbox/Facebook videos to yt-dlp only when yt-dlp is installed.
   const engines = createEngineRegistry({
     galleryDl: { delegateVideosToYtdl: () => runtime.resolveEngine('yt-dlp') !== null }
   });
